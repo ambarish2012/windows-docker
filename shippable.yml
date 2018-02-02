@@ -1,6 +1,6 @@
 jobs:
 
-  name: container_single_tasks
+  name: container_single_task
   type: runSh
   runtime:
     nodePool: custom__x86_64__WindowsServer_2016
