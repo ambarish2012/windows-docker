@@ -1,10 +1,16 @@
 jobs:
 
-  - name: container_single_tasks
-    type: runSh
-    runtime:                 
-      - nodePool: custom__x86_64__WindowsServer_2016
-    steps:
-      - TASK:
-          script:
-            - echo "Hello world"
+  name: container_single_tasks
+  type: runSh
+  runtime:
+    nodePool: custom__x86_64__WindowsServer_2016
+    container: true
+  steps:
+    - TASK:
+        name: says-hello-world
+        runtime:
+          options:
+            imageName: "microsoft/windowsservercore"
+            imageTag: "10.0.14393.1884"
+        script:
+          - echo "Hello world"
