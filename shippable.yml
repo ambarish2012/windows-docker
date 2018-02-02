@@ -1,6 +1,10 @@
-language: none
+jobs:
 
-build:
-  ci:
-    - docker build .
-    
+  - name: container_single_tasks
+    type: runSh
+    runtime:                 
+      - nodePool: custom__x86_64__WindowsServer_2016
+    steps:
+      - TASK:
+          script:
+            - echo "Hello world"
